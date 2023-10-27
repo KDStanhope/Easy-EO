@@ -1,5 +1,4 @@
-import os, sys, csv
-
+import csv
 import tkinter as tk
 from tkinter import filedialog, messagebox
 '''
@@ -11,7 +10,7 @@ def csv_exif_file():
     root = tk.Tk()
     root.withdraw()
     messagebox.showinfo(title='Easy EO', message="Select your ExifLog.csv")
-    exif_csv = filedialog.askopenfilename(title="root folder of day's acquisition")
+    exif_csv = filedialog.askopenfilename(title="Select the ExifLog you want to convert")
     return exif_csv
     
 def process_csv(exif_csv):
@@ -46,7 +45,6 @@ def image_format():
         img_fmt = "tif"
         return img_fmt
 
-
 def create_sta_from_events(events):
     with open("camera_events.sta","w+") as sta_file:
         sta_file.write("$STAINFO Ver 8.90.2428 OEM42GPB NovAtelOem4\n")
@@ -54,10 +52,6 @@ def create_sta_from_events(events):
     for i in events:
         i[0] = i[0].replace("IIQ",img_fmt)
         create_mrk(i)
-
-
-
-
 
 events = process_csv(csv_exif_file())   
 create_sta_from_events(events)
