@@ -2,7 +2,7 @@ import csv
 import tkinter as tk
 from tkinter import filedialog, messagebox
 '''
-Creates a .sta file that can be used in inertial explorer. Import the .sta as event/stations
+Creates a .sta file that can be used in inertial explorer. Import the .sta as event/stations.
 Kyle Pratt.
 '''
 
