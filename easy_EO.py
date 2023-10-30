@@ -32,7 +32,7 @@ def process_csv(exif_csv):
 
 def create_mrk(event):
     with open("camera_events.sta","a") as sta_file:
-        sta_file.write('Mrk { \n \tEvent: "' + event[0]+'"\n\tDesc: "CAMERA PULSE"\n\tGTime: '+event[2]+' '+event[1]+'\n}\n')
+        sta_file.write('Mrk { \n \tEvent: "' + event[0]+'"\n\tDesc: "CAMERA PULSE"\n\tGTim: '+event[2]+' '+event[1]+'\n}\n')
 
 def image_format():
     print("Select Image File Extension")
