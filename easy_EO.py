@@ -16,10 +16,10 @@ def csv_exif_file():
 def process_csv(exif_csv):
     events = []
     with open(exif_csv, "r") as f:
-        csvfile = csv.reader(f, delimiter=',')
+        csvfile = csv.reader(f, delimiter=',') # TAKE NOTE! The delimiter could also be a semicolon (;) or a space or a tab.... 
         for row in csvfile:
             if len(row) == 0:
-                print("Is that the right file? \n no events found...")
+                print("Is that the right file? \n no events found... check which delimiter is being used")
                 csv_exif_file()
             if row[0].endswith(".IIQ"):
                 events.append([row[0],row[3].split(':')[0],row[3].split(':')[1]])
